@@ -2,8 +2,8 @@ require 'formula'
 
 class Qt5 < Formula
   homepage 'http://qt-project.org/'
-  url 'http://download.qt-project.org/official_releases/qt/5.1/5.1.1/single/qt-everywhere-opensource-src-5.1.1.tar.gz'
-  sha1 '131b023677cd5207b0b0d1864f5d3ac37f10a5ba'
+  url 'http://download.qt-project.org/development_releases/qt/5.2/5.2.0-beta1/single/qt-everywhere-opensource-src-5.2.0-beta1.tar.gz'
+  sha1 '732a1a54dd9a507f4911602bac45bbe827c3d82d'
   head 'git://gitorious.org/qt/qt5.git', :branch => 'stable'
 
   bottle do
@@ -39,7 +39,6 @@ class Qt5 < Formula
       ENV.append 'CXXFLAGS', "-I#{MacOS.sdk_path}/System/Library/Frameworks/CoreFoundation.framework/Headers"
     end
 
-    args << "-L#{MacOS::X11.lib}" << "-I#{MacOS::X11.include}" if MacOS::X11.installed?
 
     args << "-plugin-sql-mysql" if build.with? 'mysql'
 
